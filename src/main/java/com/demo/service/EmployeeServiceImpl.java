@@ -59,7 +59,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 					if(checkLocation(employee.getLocation())){
 						updatedEmployee.setName(employee.getName());
 						updatedEmployee.setLocation(employee.getLocation());
-						return updatedEmployee;
+						return employeeDAO.save(updatedEmployee);
 					}
 					throw new InvalidDataException("Location cannot be empty");
 				}
